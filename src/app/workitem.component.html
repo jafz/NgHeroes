@@ -1,0 +1,31 @@
+<div *ngIf="workitem">
+  <h2>{{workitem.ProcessName}} details!</h2>
+  <div>
+    <button (click)="create()">Create</button>
+  </div>
+  <div>
+    <label>WorkItem id:</label> <input #wid />
+    <button (click)="lock(wid.value);">
+      Lock
+    </button>
+  </div>
+  <div><label>id: </label>{{workitem.WorkItemID}}</div>
+  <div><label>activity ID: </label>{{workitem.ActivityInstanceID}}</div>
+  <div><label>ActivityName: </label>{{workitem.ActivityName}}</div>
+  <div><label>status: </label>{{workitem.Status}}</div>
+  <div>
+    <button (click)="createDoc()">Create doc with workitem</button>
+  </div>
+  <div>
+    <label>created doc:</label>
+    {{docId}}
+  </div>
+  <div>
+    <button (click)="unlock()">Unlock work item</button>
+  </div>
+  <div>
+      <label>name: </label>
+      <input [(ngModel)]="workitem.ProcessName" placeholder="name"/>
+  </div>
+  <button (click)="load()">Back</button>
+</div>

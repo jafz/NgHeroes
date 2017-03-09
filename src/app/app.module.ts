@@ -15,13 +15,15 @@ import {HeroesComponent} from './heroes.component';
 import {HeroService} from './hero.service';
 import {HeroSearchComponent} from './hero-search.component';
 import {DashboardComponent} from './dashboard.component';
+import {WorkitemComponent} from './workitem.component';
+import {WorkitemService} from './workitem.service';
 
 @NgModule({
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    InMemoryWebApiModule.forRoot(InMemoryDataService),
+    //InMemoryWebApiModule.forRoot(InMemoryDataService),
     AppRoutingModule,
   ],
   declarations: [
@@ -30,12 +32,14 @@ import {DashboardComponent} from './dashboard.component';
     HeroDetailComponent,
     HeroesComponent,
     HeroSearchComponent,
+    WorkitemComponent,
   ],
   bootstrap: [
     AppComponent
   ],
   providers: [
-    HeroService
+    HeroService,
+    WorkitemService
   ]
 })
 export class AppModule { }
